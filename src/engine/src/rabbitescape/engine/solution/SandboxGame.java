@@ -8,6 +8,8 @@ import java.util.List;
 import rabbitescape.engine.Entrance;
 import rabbitescape.engine.Exit;
 import rabbitescape.engine.Fire;
+
+import rabbitescape.engine.Fire_Factory;
 import rabbitescape.engine.IgnoreWorldStatsListener;
 import rabbitescape.engine.Pipe;
 import rabbitescape.engine.Rabbit;
@@ -103,7 +105,7 @@ public class SandboxGame
             else if ( thing instanceof Fire )
             {
                 Fire fire = (Fire)thing;
-                clonedThings.add( new Fire( fire.x, fire.y, fire.variant ) );
+                clonedThings.add( Fire_Factory.getFire(fire.x, fire.y, fire.state) );
             }
             else if ( thing instanceof Pipe )
             {

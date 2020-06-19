@@ -23,7 +23,8 @@ import java.util.regex.Pattern;
 import rabbitescape.engine.Block;
 import rabbitescape.engine.Entrance;
 import rabbitescape.engine.Exit;
-import rabbitescape.engine.Fire;
+
+import rabbitescape.engine.Fire_Factory;
 import rabbitescape.engine.Pipe;
 import rabbitescape.engine.Rabbit;
 import rabbitescape.engine.Thing;
@@ -586,7 +587,7 @@ public class LineProcessor
             }
             case 'A':
             {
-                ret = new Fire( x, y, variantGen.next( 4 ) );
+            	ret = Fire_Factory.getFire_byVariant(x,y,variantGen.next( 4 ));
                 things.add( ret );
                 break;
             }
